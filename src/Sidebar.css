@@ -1,0 +1,97 @@
+/* General container styling */
+.container {
+  position:absolute; /* Makes the container fixed in the viewport */
+  align-items: end;
+  margin-right: 10px;
+  top: 160px; /* Adjust based on the current position (vertical offset) */
+  left: 1300px; /* Adjust based on the current position (horizontal offset) */
+  right:0%; /* Optional: Keeps it responsive on the right */
+  background-color: #f1f1f1; /* Light background for the container */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Inner spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 22%; /* Restrict maximum height */
+  z-index: 900; /* Ensures it stays above other elements */
+}
+
+  
+  /* Heading styles */
+  .container h1 {
+    position:static; /* Sticky positioning for the headline */
+    top: 0; /* Stick to the top of the container */
+    background-color: #f1f1f1; /* Match the container's background */
+    padding: 10px; /* Padding to align properly */
+    z-index: 10; /* Ensure it stays above scrolling content */
+    font-size: 1.4rem; /* Large font size for the title */
+    font-weight: bold; /* Bold title */
+    color: #050303; /* Darker text color for readability */
+    text-align: center; /* Center-align the heading */
+  }
+  
+  /* Individual news card styling */
+  .news-card1 {
+    border: 1px solid #ddd; /* Border for individual cards */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure content doesn’t overflow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for a card-like look */
+    background-color: #fff; /* White background for cards */
+    transition: transform 0.2s, box-shadow 0.2s; /* Add hover effect */
+  }
+  
+  /* Hover effect for cards */
+  .news-card1:hover {
+    transform: translateY(-5px); /* Slight upward movement on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  /* Card body styling */
+  .card-body1 {
+    padding: 10px; /* Inner spacing */
+  }
+  
+  /* Button styling */
+  .card-body1 .btn-primary1 {
+    background-color: #23272b; /* Primary blue color */
+    color:#f1f1f1; /* White text */
+    border: none; /* Remove border */
+    padding: 2px 5px; /* Padding for buttons */
+    border-radius: 4px; /* Slightly rounded corners */
+    font-size: 0.6rem; /* Smaller font size */
+    font-weight: bold; /* Bold text */
+  }
+  
+  /* Card title styling */
+  .card-title1 {
+    font-size:0.8rem; /* Slightly larger font for titles */
+    font-weight:600; /* Emphasized text */
+    margin-bottom: 5px; /* Spacing below the title */
+    color: #201d1d; /* Darker color for text */
+  }
+  
+  /* Error message styling */
+  .text-danger {
+    color: #dc3545; /* Bootstrap danger red */
+    font-weight: bold; /* Bold text for emphasis */
+    text-align: center; /* Center align error message */
+  }
+  
+  /* Loading message styling */
+  .container p {
+    font-size: 1rem; /* Regular font size */
+    color: #666; /* Gray color for text */
+    text-align: center; /* Center align text */
+  }
+  
+  /* Responsive design for mobile screens */
+  @media (max-width: 768px) {
+    .container {
+      max-height: 100%; /* Allow full height on smaller screens */
+      padding: 15px; /* Adjust padding */
+    }
+  
+    .news-card {
+      margin-bottom: 15px; /* Add spacing between cards */
+    }
+  }
+  

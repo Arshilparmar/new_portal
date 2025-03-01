@@ -1,0 +1,46 @@
+/* Main container for the layout */
+.main-layout {
+  display: flex; /* Flexbox layout */
+  flex-wrap: nowrap; /* No wrapping */
+  justify-content: space-between; /* Space between left and right */
+  gap: 20px; /* Space between columns */
+  padding: 20px; /* Optional padding */
+}
+
+/* Left side (Features component) */
+.left-content {
+  flex: 1; /* Take up more space */
+  max-width: 20%; /* Restrict maximum width */
+}
+
+/* Right side (Sidebar) */
+.right-content {
+  flex: 0 0 30%; /* Fixed width for the sidebar */
+  max-width: 30%;
+}
+
+/* Sidebar styling */
+.sidebar {
+  background-color: #f9f9f9; /* Light background */
+  border: 1px solid #ddd; /* Border for the sidebar */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding for the content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .left-content,
+  .right-content {
+    max-width: 100%; /* Full width */
+    flex: 1; /* Take up equal space */
+  }
+
+  .right-content {
+    margin-top: 20px; /* Add spacing between stacked items */
+  }
+}

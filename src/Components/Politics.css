@@ -1,0 +1,99 @@
+/* General container for news */
+.live5{
+  position:absolute;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  top: 160px;
+  left: 15%;
+  right: 0%;
+}
+
+.p1{
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-left: 25px;
+  margin: 20px;
+  border-bottom: 2px solid #282c31;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.p2{
+  margin-left: 20px;
+}
+
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Spacing between cards */
+    padding: 20px;
+  }
+  
+  /* Individual news card styling */
+  .news-card {
+    border: 1px solid #ddd; /* Border for individual cards */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure content doesn’t overflow */
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for a card-like look */
+    background-color: #fff; /* White background for cards */
+    transition: transform 0.2s, box-shadow 0.2s; /* Hover effect */
+  }
+  
+  /* Hover effect for cards */
+  .news-card:hover {
+    transform: translateY(-5px); /* Slight upward movement on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  /* Card image styling */
+  .news-card img {
+    width: 100%; /* Full width of the card */
+    height: 40%; /* Maintain aspect ratio */
+    border-bottom: 1px solid #ddd; /* Separator for the image */
+  }
+  
+  /* Card body styling */
+  .card-body {
+    padding: 15px; /* Inner spacing */
+  }
+  
+  /* Card title styling */
+  .card-title {
+    font-size: 1rem; /* Larger font for titles */
+    font-weight: bold; /* Emphasized text */
+    margin-bottom: 10px; /* Spacing below the title */
+    color: #333; /* Darker color for text */
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    color: #23272b;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+  /* Button styling */
+  .card-body .btn-primary {
+    background-color:#23272b; /* Primary blue color */
+    color: #f1f1f1; /* White text */
+    border: none; /* Remove border */
+    padding: 4px 7px; /* Padding for buttons */
+    border-radius: 4px; /* Slightly rounded corners */
+    font-size: 0.7rem; /* Smaller font size */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.2s, box-shadow 0.2s; /* Hover effects */
+  }
+  
+  /* Button hover effect */
+  .card-body .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
