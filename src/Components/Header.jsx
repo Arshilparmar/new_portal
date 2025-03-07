@@ -1,34 +1,49 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faTwitter, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import "./Header.css";
+import NewsContext from "../Context/NewsContext";
 
-export default function Header(props) {
+export default function Header() {
   const [query, setQuery] = useState("");
-  const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [searched, setSearched] = useState(false);
+  const { setNews, setSearched, setLanguage } = useContext(NewsContext);
+  const navigate = useNavigate();
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+  };
+
+  const formattedDate = new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });
 
   const fetchNews = async () => {
     if (!query.trim()) return;
 
-    setLoading(true);
     setSearched(true);
 
-    const apiKey = "pub_721540ef95a2fa350b4882bca89347a2770c4"; // Replace with your API key
-    const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${encodeURIComponent(query)}&language=en`;
+    const apiKey = "pub_72841ba4859086bbb72530fa53fa24ac8623e"; // Replace with your API key
+    const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${encodeURIComponent(
+      query
+    )}&language=en`;
 
     try {
       const response = await fetch(url);
       const data = await response.json();
       setNews(data.results || []);
+      navigate("/news"); // Redirect to News Page
     } catch (error) {
       console.error("Error fetching news:", error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -45,14 +60,18 @@ export default function Header(props) {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
-              <button onClick={fetchNews} className="search-icon" aria-label="Search">
+              <button
+                onClick={fetchNews}
+                className="search-icon"
+                aria-label="Search"
+              >
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </button>
             </div>
-            <span>Wednesday, Feb 28, 2025</span>
+            <strong>{formattedDate}</strong>
           </div>
 
-          {loading && <p className="mt-4">Loading...</p>}
+          {/* {loading && <p className="mt-4">Loading...</p>}
 
           <div className="mt-4">
             {news.length > 0 ? (
@@ -65,9 +84,9 @@ export default function Header(props) {
                 </div>
               ))
             ) : (
-              searched && !loading && <p>No news found.</p>
+              searched && !loading && <p> No news found.</p>
             )}
-          </div>
+          </div> */}
 
           <div className="main-navbar">
             <div className="logo">
@@ -83,13 +102,18 @@ export default function Header(props) {
           </div>
 
           <div className="topbar-right">
-            <div>
-              <Link to="#">English</Link> | 
-              <Link to="#">हिंदी</Link> | 
-              <Link to="#">ગુજરાતી</Link> |
-              <Link to="#">বাংলা</Link> | 
-              <Link to="#">मराठी</Link> | 
-              <Link to="#">தமிழ்</Link>
+            <div className="language">
+              <button onClick={() => handleLanguageChange("en")}>
+                English
+              </button>
+              |<button onClick={() => handleLanguageChange("hi")}>हिंदी</button>
+              |
+              <button onClick={() => handleLanguageChange("gu")}>
+                ગુજરાતી
+              </button>
+              |<button onClick={() => handleLanguageChange("bn")}>বাংলা</button>
+              |<button onClick={() => handleLanguageChange("mr")}>मराठी</button>
+              |<button onClick={() => handleLanguageChange("ta")}>தமிழ்</button>
             </div>
             <div>
               <Link to="#" aria-label="Facebook">
@@ -114,7 +138,11 @@ export default function Header(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link text-white active" aria-current="page" to="/">
+              <Link
+                className="nav-link text-white active"
+                aria-current="page"
+                to="/"
+              >
                 Home
               </Link>
             </li>
@@ -161,24 +189,18 @@ export default function Header(props) {
         <div className="bottom-bar">
           <div className="trending">TRENDING</div>
           <Link to="/stocks">Smart Stocks</Link>
-          <Link to="#">UPSC Offer</Link>
-          <Link className="cricket" to="/cricket">Cricket</Link>
-          <Link className="premium" to="#">Premium</Link>
+          <Link className="cricket" to="/cricket">
+            Cricket
+          </Link>
+          <Link to="#">UEFA</Link>
+          <Link className="premium" to="#">
+            Premium
+          </Link>
           <Link to="/tourism">Tourism</Link>
-          <Link to="/video">🔴 Live TV</Link>                                                         
+          <Link to="/video">🔴 Live TV</Link>
           <Link to="/health">Health & Wellness</Link>
         </div>
       </nav>
     </div>
   );
 }
-
-Header.defaultProps = {
-  title: "Your Title Here",
-  searchBar: true,
-};
-
-Header.propTypes = {
-  title: PropTypes.string,
-  searchBar: PropTypes.bool.isRequired,
-};

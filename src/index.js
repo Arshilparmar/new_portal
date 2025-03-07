@@ -1,5 +1,5 @@
 import React from "react";
-import './index.css';
+import "./index.css";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Politics from "./Components/Politics";
@@ -20,31 +20,36 @@ import Stocks from "./Components/Stocks";
 import Cricket from "./Components/Cricket";
 import Tourism from "./Components/Tourism";
 import Video from "./Components/Video";
+import { NewsProvider } from "./Context/NewsContext";
+import NewsPage from "./Components/NewsPage";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-       <Route path="/" element={<Mainnews />} />
-        <Route path="/politics" element={<Politics />} />
-        <Route path="/business" element={<Business />} />
-        <Route path="/technology" element={<Technology />} />
-        <Route path="/entertainment" element={<Entertainment />} />
-        <Route path="/sports" element={<Sports/>} />
-        <Route path="/education" element={<Education/>} />
-        <Route path="/bollywood" element={<Bollywood/>} />
-        <Route path="/world" element={<World/>} />
-        <Route path="/environment" element={<Environment/>} />
-        <Route path="/health" element={<Health/>} />
-        <Route path="/crime" element={<Crime/>} />
-        <Route path="/culture" element={<Culture/>} />
-        <Route path="/travel" element={<Travel/>} />
-        <Route path="/stocks" element={<Stocks/>}/>
-        <Route path="/cricket" element={<Cricket/>}/>
-        <Route path="/tourism" element={<Tourism/>}/>
-        <Route path="/video" element={<Video/>}/>
-      </Routes>
-    </BrowserRouter>
+    <NewsProvider> {/* ✅ Wrap the entire app */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Mainnews />} />
+          <Route path="/politics" element={<Politics />} />
+          <Route path="/business" element={<Business />} />
+          <Route path="/technology" element={<Technology />} />
+          <Route path="/entertainment" element={<Entertainment />} />
+          <Route path="/sports" element={<Sports />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/bollywood" element={<Bollywood />} />
+          <Route path="/world" element={<World />} />
+          <Route path="/environment" element={<Environment />} />
+          <Route path="/health" element={<Health />} />
+          <Route path="/crime" element={<Crime />} />
+          <Route path="/culture" element={<Culture />} />
+          <Route path="/travel" element={<Travel />} />
+          <Route path="/stocks" element={<Stocks />} />
+          <Route path="/cricket" element={<Cricket />} />
+          <Route path="/tourism" element={<Tourism />} />
+          <Route path="/video" element={<Video />} />
+          <Route path="/news" element={<NewsPage />} /> {/* ✅ Now it's correct */}
+        </Routes>
+      </BrowserRouter>
+    </NewsProvider>
   );
 }
 

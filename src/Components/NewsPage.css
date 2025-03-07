@@ -1,0 +1,98 @@
+/* Center the entire page */
+.page-container {
+  position: absolute;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  top: 190px;
+  left: 13%;
+  right: 24%;
+  display:grid;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; 
+  text-align:start;
+  gap: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+
+/* Grid layout for better design */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* News card styling */
+.news-card {
+  border: 1px solid #ddd; /* Border for individual cards */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure content doesn’t overflow */
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for a card-like look */
+    background-color: #fff; /* White background for cards */
+    transition: transform 0.2s, box-shadow 0.2s; /* Hover effect */
+}
+
+.news-card:hover {
+  transform: translateY(-5px); /* Slight upward movement on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* News image */
+.card-image {
+  width: 100%; /* Full width of the card */
+  height: 40%; /* Maintain aspect ratio */
+  border-bottom: 1px solid #ddd; /* Separator for the image */
+}
+
+/* News content */
+.card-body {
+  padding: 15px;
+}
+
+/* News title */
+.card-title {
+  font-size: 1rem; /* Larger font for titles */
+  font-weight: bold; /* Emphasized text */
+  margin-bottom: 10px; /* Spacing below the title */
+  color: #333; /* Darker color for text */
+}
+
+/* News description */
+.card-text {
+    font-size: 0.9rem;
+    color: #23272b;
+    margin-top: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Read More button */
+.btn-primary {
+  background-color:#23272b; /* Primary blue color */
+  color: #f1f1f1; /* White text */
+  border: none; /* Remove border */
+  padding: 4px 7px; /* Padding for buttons */
+  border-radius: 4px; /* Slightly rounded corners */
+  margin-top: 10%;
+  margin-right: 80%;
+  font-size: 0.7rem; /* Smaller font size */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.2s, box-shadow 0.2s; /* Hover effects */
+}
+
+/* No news message */
+.no-news {
+  font-size: 1.2rem;
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
+}

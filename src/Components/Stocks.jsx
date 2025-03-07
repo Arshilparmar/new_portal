@@ -1,30 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import Layout from './Layout';
 import Features from '../Features';
 import './Politics.css';
+import NewsContext from "../Context/NewsContext";
 
 const Stocks = () => {
 
+  const {language} = useContext(NewsContext);
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchNews = async () => {
-      const apiKey = "pub_66070ff278a43d4ad0d8c3c56e22e1880789e";
-      const url = `${process.env.REACT_APP_API_KEY}&q=stock&language=en`;
-      const params = {
-        apikey: apiKey,
-        q: "technology", // Keyword to search for news
-        country: "in", // Filter by country (India)
-        language: "en", // Language (English)
-        category: "top", // News category
-      };
+      const url = `${process.env.REACT_APP_API_KEY}&q=stock&language=${language}`;
 
       try {
-        const response = await axios.get(url, { params });
-        console.log("API Response:", response.data);
+        const response = await axios.get(url);
 
         // Set news data based on response structure
         if (response.data && response.data.results) {
@@ -42,7 +35,7 @@ const Stocks = () => {
     };
 
     fetchNews();
-  }, []);
+  }, [language]);
 
   return (<>
     <div>
