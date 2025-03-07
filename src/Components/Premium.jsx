@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import "./Topnews.css"
-import NewsContext from "./Context/NewsContext";
+import Layout from './Layout';
+import Features from '../Features';
+import './Premium.css';
+import NewsContext from "../Context/NewsContext";
 
-function Topnews() {
+const Premium = () => {
   const {language} = useContext(NewsContext);
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -11,7 +13,7 @@ function Topnews() {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const url = `${process.env.REACT_APP_API_KEY}&q=live%20news&language=${language}`;
+      const url = `${process.env.REACT_APP_API_KEY}&q=premium&language=${language}`;
 
       try {
         const response = await axios.get(url);
@@ -27,24 +29,29 @@ function Topnews() {
       } catch (error) {
         console.error("Error fetching news:", error.response || error.message || error);
         setError("Failed to fetch news: " + (error.response?.data?.message || error.message));
-        setLoading(false);
+        setLoading(false); 
       }
     };
 
     fetchNews();
   }, [language]);
 
-  return (
-    <div className="live my-5">
-      <button className="live-btn">⚪ Live</button>
-      <h1 className="mb-4">Live News</h1>
-      {loading && <p className="p2">Loading news...</p>}
+  return (<>
+    <div>
+      <Layout></Layout>
+    </div>
+    <div>
+      <Features></Features>
+    </div>
+    <div className="live6 my-5">
+      <h1 className="p6"> Premium News</h1>
+      {loading && <p className="a6">Loading news...</p>}
       {error && <p className="text-danger">{error}</p>}
-      <div className="news-container">
+      <div className="news-container6">
         {!loading &&
           !error &&
           news.map((article, index) => (
-            <div key={index} className="news-card">
+            <div key={index} className="news-card6">
               <img src={article.image_url || "default-image.jpg"} alt={article.title} className="card-img-top" />
               <div className="card-body">
                 <h5 className="card-title">{article.title || "Untitled"}</h5>
@@ -59,7 +66,8 @@ function Topnews() {
           ))}
       </div>
     </div>
+    </>
   );
 }
 
-export default Topnews;
+export default Premium

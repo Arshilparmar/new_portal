@@ -22,6 +22,7 @@ import Tourism from "./Components/Tourism";
 import Video from "./Components/Video";
 import { NewsProvider } from "./Context/NewsContext";
 import NewsPage from "./Components/NewsPage";
+import Premium from "./Components/Premium";
 
 export default function App() {
   return (
@@ -46,7 +47,8 @@ export default function App() {
           <Route path="/cricket" element={<Cricket />} />
           <Route path="/tourism" element={<Tourism />} />
           <Route path="/video" element={<Video />} />
-          <Route path="/news" element={<NewsPage />} /> {/* ✅ Now it's correct */}
+          <Route path="/news" element={<NewsPage />} />
+          <Route path="/premium" element={<Premium/>}/>
         </Routes>
       </BrowserRouter>
     </NewsProvider>

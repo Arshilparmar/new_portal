@@ -193,7 +193,7 @@ export default function Header() {
             Cricket
           </Link>
           <Link to="#">UEFA</Link>
-          <Link className="premium" to="#">
+          <Link className="premium" to="/premium">
             Premium
           </Link>
           <Link to="/tourism">Tourism</Link>
