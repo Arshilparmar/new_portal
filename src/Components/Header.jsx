@@ -174,10 +174,10 @@ export default function Header() {
           </ul>
 
           <div className="register-signin">
-            <Link to="#" className="btn register">
+            <Link to="/signup" className="btn register">
               Register
             </Link>
-            <Link to="#" className="btn signin">
+            <Link to="/login" className="btn signin">
               Sign In
             </Link>
           </div>
@@ -192,7 +192,7 @@ export default function Header() {
           <Link className="cricket" to="/cricket">
             Cricket
           </Link>
-          <Link to="#">UEFA</Link>
+          <Link to="/football">Football</Link>
           <Link className="premium" to="/premium">
             Premium
           </Link>

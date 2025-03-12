@@ -1,73 +1,49 @@
-import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
-import Layout from './Layout';
-import Features from '../Features';
-import './Premium.css';
-import NewsContext from "../Context/NewsContext";
+import Features from "../Features";
+import Sidebar from "../Sidebar";
+import Layout from "./Layout";
+import "./Premium.css";
+import { useNavigate } from "react-router-dom";
 
-const Premium = () => {
-  const {language} = useContext(NewsContext);
-  const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      const url = `${process.env.REACT_APP_API_KEY}&q=premium&language=${language}`;
-
-      try {
-        const response = await axios.get(url);
-
-        // Set news data based on response structure
-        if (response.data && response.data.results) {
-          setNews(response.data.results); // 'results' is the key where articles are stored
-        } else {
-          throw new Error("Unexpected API response structure");
-        }
-
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching news:", error.response || error.message || error);
-        setError("Failed to fetch news: " + (error.response?.data?.message || error.message));
-        setLoading(false); 
-      }
-    };
-
-    fetchNews();
-  }, [language]);
-
-  return (<>
+export default function Premium() {
+  const navigate = useNavigate();
+  return (
+    <>
     <div>
-      <Layout></Layout>
+      <Layout/>
     </div>
     <div>
-      <Features></Features>
+      <Features/>
     </div>
-    <div className="live6 my-5">
-      <h1 className="p6"> Premium News</h1>
-      {loading && <p className="a6">Loading news...</p>}
-      {error && <p className="text-danger">{error}</p>}
-      <div className="news-container6">
-        {!loading &&
-          !error &&
-          news.map((article, index) => (
-            <div key={index} className="news-card6">
-              <img src={article.image_url || "default-image.jpg"} alt={article.title} className="card-img-top" />
-              <div className="card-body">
-                <h5 className="card-title">{article.title || "Untitled"}</h5>
-                <p className="card-text">{article.description || "No description available."}</p>
-                {article.link && (
-                  <a href={article.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                    Read more
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
+    <div>
+      <Sidebar/>
+    </div>
+    <div className="container4">
+      {/* Premium Access Section */}
+      <div className="premium-box">
+        <div className="logo-container">
+          <div className="logo45"><img
+                src="https://logowik.com/content/uploads/images/t_black-sphere-globe-design4707.logowik.com.webp"
+                alt="Logo"
+              /></div>
+        </div>
+        <p className="signin-text1">
+          Already a subscriber? <span className="signin-link">Sign in</span>
+        </p>
+        <h2 className="access-text">
+          You’re just one step away from accessing this premium story.
+        </h2>
+        <button className="subscribe-btn" onClick={() => navigate("/subscribe")}>Subscribe Now</button>
       </div>
-    </div>
-    </>
+      
+      {/* Benefits Section */}
+      <div className="benefits-box">
+        <h3 className="benefits-title">Discover the Benefits of Our Subscription!</h3>
+        <ul className="benefits-list">
+          <li><span className="check">✔</span> Stay informed with access to our award-winning journalism.</li>
+          <li><span className="check">✔</span> Avoid misinformation with trusted, accurate reporting.</li>
+          <li><span className="check">✔</span> Make smarter decisions with insights that matter.</li>
+        </ul>
+      </div>
+    </div></>
   );
 }
-
-export default Premium

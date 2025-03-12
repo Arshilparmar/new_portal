@@ -1,99 +1,110 @@
-/* General container for news */
-.live6{
-  position:absolute;
-  background-color: #f1f1f1;
-  border-radius: 8px;
-  top: 160px;
-  left: 15%;
-  right: 0%;
+/* PremiumAccess.css */
+.container4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  padding: 20px;
+  margin-right: 100px;
 }
 
-.p6{
-  font-size: 1.3rem;
+.premium-box {
+  background-color: #23272b;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 200px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.logo45 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo45 img {
+  width: 90px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.logo45 a {
+  text-decoration: none;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-top: 30px;
-  margin-left: 25px;
-  margin: 20px;
-  border-bottom: 2px solid #282c31;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
+  color: #363636;
 }
 
-.a6{
-  margin-left: 20px;
+.signin-text1 {
+  font-size: 18px;
+  color:#f1f1f1 ;
 }
 
-.news-container6 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
-    gap: 20px; /* Spacing between cards */
-    padding: 20px;
-  }
-  
-  /* Individual news card styling */
-  .news-card6 {
-    border: 1px solid #ddd; /* Border for individual cards */
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Ensure content doesn’t overflow */
-    height: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for a card-like look */
-    background-color: #fff; /* White background for cards */
-    transition: transform 0.2s, box-shadow 0.2s; /* Hover effect */
-  }
-  
-  /* Hover effect for cards */
-  .news-card6:hover {
-    transform: translateY(-5px); /* Slight upward movement on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
-  }
-  
-  /* Card image styling */
-  .news-card6 img {
-    width: 100%; /* Full width of the card */
-    height: 40%; /* Maintain aspect ratio */
-    border-bottom: 1px solid #ddd; /* Separator for the image */
-  }
-  
-  /* Card body styling */
-  .card-body {
-    padding: 15px; /* Inner spacing */
-  }
-  
-  /* Card title styling */
-  .card-title {
-    font-size: 1rem; /* Larger font for titles */
-    font-weight: bold; /* Emphasized text */
-    margin-bottom: 10px; /* Spacing below the title */
-    color: #333; /* Darker color for text */
-  }
-  
-  .card-text {
-    font-size: 0.9rem;
-    color: #23272b;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.signin-link {
+  color: yellow;
+  font-weight: bold;
+  cursor: pointer;
 }
 
+.access-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #f1f1f1;
+}
 
-  /* Button styling */
-  .card-body .btn-primary {
-    background-color:#23272b; /* Primary blue color */
-    color: #f1f1f1; /* White text */
-    border: none; /* Remove border */
-    padding: 4px 7px; /* Padding for buttons */
-    border-radius: 4px; /* Slightly rounded corners */
-    font-size: 0.7rem; /* Smaller font size */
-    font-weight: bold; /* Bold text */
-    transition: background-color 0.2s, box-shadow 0.2s; /* Hover effects */
-  }
-  
-  /* Button hover effect */
-  .card-body .btn-primary:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-    text-decoration: none; /* Remove underline from links */
-  }
-  
+.subscribe-btn {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  border: none;
+}
+
+.benefits-box {
+  background-color: #f1f1f1;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.benefits-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.benefits-list {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.check {
+  color: red;
+  font-size: 20px;
+  margin-right: 5px;
+}
