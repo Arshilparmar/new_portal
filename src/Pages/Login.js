@@ -49,7 +49,7 @@ const Login = () => {
   
       if (success) {
         handleSuccesss(message);
-        setTimeout(() => navigate("/home"), 500);
+        navigate("/");
       } else {
         const details = error?.details?.[0]?.message || message || "Login failed!";
         handleError(details);
@@ -65,7 +65,7 @@ const Login = () => {
       <h1>Login</h1>
       <form onSubmit={handleLogin} className='login-form'>
         <div className='input-group'>
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='email'>Email</label> 
           <input 
             onChange={handleChange} 
             type='email' 

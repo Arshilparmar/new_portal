@@ -18,7 +18,7 @@ function Home() {
     handleSuccesss('User Loggedout'); 
     setTimeout(() => {
       navigate('/login');
-    }, 1000)
+    }, 1000) 
   }
 
   const fetchProducts = async () => {

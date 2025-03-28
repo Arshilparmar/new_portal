@@ -81,79 +81,6 @@
   .plan-radio {
     margin-top: 0.7rem;
   }
-  
-  .form-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .form-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-  }
-  
-  .signin-text {
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .signin-link {
-    color: rgb(15, 64, 155);
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .input-group {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-    margin: 10px 0;
-  }
-  
-  .input-group .icon {
-    margin-right: 10px;
-    font-size: 16px;
-  }
-  
-  .input-group input {
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 16px;
-  }
-  
-  .checkbox-group {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    font-size: 14px;
-  }
-  
-  .checkbox-group input {
-    margin-right: 10px;
-  }
-  
-  .terms-link {
-    color: rgb(15, 64, 155);
-    cursor: pointer;
-  }
-  
-  .submit-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #23272b;
-    color: #f1f1f1;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    margin-top: 15px;
-    border-radius: 10px;
-  }
 
   .payment-container {
     width: 400px;
@@ -255,3 +182,74 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+
+  .validation{
+    color: #cf1c1c;
+    font-size: small;
+  }
+
+  .V1{
+    color: #23272b;
+  }
+
+  /* Modal Header */
+.modal-header-custom {
+  background-color:#23272b;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+/* Order Summary */
+.order-summary {
+  padding: 15px;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.summary-item {
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 5px 0;
+}
+
+.price-strike {
+  text-decoration: line-through;
+  color: #dc3545;
+}
+
+.discount {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.amount {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.final-price {
+  color: #23272b;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Success Message */
+.success-message {
+  text-align: center;
+  font-size: 18px;
+  color: #28a745;
+  margin-top: 10px;
+}
+
+/* Close Button */
+.close-btn {
+  background-color:#23272b;
+  font-size:medium;
+  color: #f1f1f1;
+  gap: 10px;
+  padding: 6px 12px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border: none;
+}
