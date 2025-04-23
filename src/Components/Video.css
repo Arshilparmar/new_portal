@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    flex-wrap: wrap; /* Allows wrapping if needed */
-    gap: 20px; /* Adds space between the divs */
+    flex-wrap: wrap;
+    gap: 20px; 
     margin: 20px auto;
   }
   
@@ -12,14 +12,14 @@
     flex-wrap: wrap;
     justify-content: center;
     height: 50px;
-    gap: 30px; /* Adds space between videos */
-    flex: 1; /* Ensures equal width */
+    gap: 30px;
+    flex: 1; 
     margin-left: 130px;
     margin-top: 220px;
   }
   
   .player1 {
-    width: 360px !important; /* Set fixed width */
-    height: 240px !important; /* Set fixed height */
+    width: 360px !important; 
+    height: 240px !important;
   }
   

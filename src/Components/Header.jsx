@@ -103,29 +103,24 @@ export default function Header() {
 
           <div className="topbar-right">
             <div className="language">
-              <button onClick={() => handleLanguageChange("en")}>
-                English
-              </button>
+              <button onClick={() => handleLanguageChange("en")}>English</button>
               |<button onClick={() => handleLanguageChange("hi")}>हिंदी</button>
-              |
-              <button onClick={() => handleLanguageChange("gu")}>
-                ગુજરાતી
-              </button>
+              |<button onClick={() => handleLanguageChange("gu")}>ગુજરાતી</button>
               |<button onClick={() => handleLanguageChange("bn")}>বাংলা</button>
               |<button onClick={() => handleLanguageChange("mr")}>मराठी</button>
               |<button onClick={() => handleLanguageChange("ta")}>தமிழ்</button>
             </div>
             <div>
-              <Link to="#" aria-label="Facebook">
+              <Link to="https://www.facebook.com/" aria-label="Facebook">
                 <FontAwesomeIcon className="brand" icon={faFacebook} />
               </Link>
-              <Link to="#" aria-label="Twitter">
+              <Link to="https://x.com/?lang=en" aria-label="Twitter">
                 <FontAwesomeIcon className="brand" icon={faTwitter} />
               </Link>
-              <Link to="#" aria-label="Instagram">
+              <Link to="https://www.instagram.com/accounts/login/?hl=en" aria-label="Instagram">
                 <FontAwesomeIcon className="brand" icon={faInstagram} />
               </Link>
-              <Link to="#" aria-label="Youtube">
+              <Link to="https://www.youtube.com/" aria-label="Youtube">
                 <FontAwesomeIcon className="brand" icon={faYoutube} />
               </Link>
             </div>
@@ -141,8 +136,7 @@ export default function Header() {
               <Link
                 className="nav-link text-white active"
                 aria-current="page"
-                to="/"
-              >
+                to="/">
                 Home
               </Link>
             </li>

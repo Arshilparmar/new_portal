@@ -28,7 +28,7 @@ function Mainnews() {
           </div>
         </div>
       </div>
-   
+      
     </>
   );
 }

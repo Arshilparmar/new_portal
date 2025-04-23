@@ -1,4 +1,3 @@
-/* Main container for the layout */
 .main-layout {
   display: flex; /* Flexbox layout */
   flex-wrap: nowrap; /* No wrapping */
@@ -21,14 +20,24 @@
 
 /* Sidebar styling */
 .sidebar {
-  background-color: #f9f9f9; /* Light background */
-  border: 1px solid #ddd; /* Border for the sidebar */
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* Padding for the content */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-/* Responsive design for smaller screens */
+.center-content {
+  margin-bottom: 200px;
+}
+
+.bottam-content{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .main-layout {
     flex-direction: column; /* Stack items vertically */

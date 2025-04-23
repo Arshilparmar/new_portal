@@ -17,7 +17,7 @@ const CricketScore = () => {
       if (result.status === "success") {
         setData(result.data);
       } else {
-        setData([]); // Handle empty data
+        setData([]); 
       }
     } catch (err) {
       console.error("Error fetching data:", err);

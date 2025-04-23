@@ -1,0 +1,154 @@
+/* Footer Main Container */
+.footer {
+  background-color: #0d0d0d;
+  color: #f1f1f1;
+  padding: 10px 10px;
+  font-family: Arial, sans-serif;
+  position: fixed;
+  width: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Footer Sections */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Top Categories */
+.section-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+/* Divider Removed */
+.category-divider {
+  display: none;
+}
+
+/* Top Categories Grid */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Individual Category Item */
+.category-item {
+  font-size: 14px;
+  color: #d0d0d0;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.category-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.category-link:hover {
+  color: #007bff;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  display: flex;
+  border-top: #f1f1f1 1px solid;
+  margin-top: 25px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+
+/* Social Media */
+.social-media {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.F1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.brand2 {
+  color: #f1f1f1;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.brand2:hover {
+  color: #ffcc00;
+}
+
+.icons {
+  display: flex;
+  gap: 14px;
+}
+
+/* Quick Links */
+.Q1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.quick-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  gap: 30px;
+  padding: 5px;
+}
+
+.quick-links ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 14px;
+}
+
+.quick-links ul li a:hover {
+  color: #007bff; /* Blue on hover */
+}
+
+/* Copyright Section */
+.copyright {
+  text-align: center;
+  border-top: #f1f1f1 1px solid;
+  margin-top: 10px;
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #b0b0b0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .categories-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .icons {
+      justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories-grid {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}

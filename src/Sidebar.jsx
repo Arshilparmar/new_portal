@@ -36,7 +36,7 @@ function Sidebar() {
   }, [language]);
 
   return (
-    <div className="container my-5">
+    <div className="container">
       <h1 className="mb-4">Top Headlines</h1>
       {loading && <p>Loading news...</p>}
       {error && <p className="text-danger">{error}</p>}
@@ -47,7 +47,6 @@ function Sidebar() {
             <div class="news-card1 card">
             <div class="card-body1">
             <h3 class="card-title1">{article.title || "Untitled"}</h3>
-            {/* <p class="card-text">{article.description || "No description available."}</p> */}
             {article.link && (
               <a href={article.link} class="btn btn-primary1" target="_blank" rel="noopener noreferrer">
                 Read more

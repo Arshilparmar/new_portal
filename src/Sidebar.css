@@ -1,9 +1,8 @@
-/* General container styling */
 .container {
   position:absolute; /* Makes the container fixed in the viewport */
   align-items: end;
   margin-right: 10px;
-  top: 160px; /* Adjust based on the current position (vertical offset) */
+  top: 210px; /* Adjust based on the current position (vertical offset) */
   left: 1300px; /* Adjust based on the current position (horizontal offset) */
   right:0%; /* Optional: Keeps it responsive on the right */
   background-color: #f1f1f1; /* Light background for the container */
@@ -75,7 +74,7 @@
     font-weight: bold; /* Bold text for emphasis */
     text-align: center; /* Center align error message */
   }
-  
+
   /* Loading message styling */
   .container p {
     font-size: 1rem; /* Regular font size */

@@ -1,9 +1,9 @@
-/* General container for news */
+
 .live{
   position:absolute;
   background-color: #f1f1f1;
   border-radius: 8px;
-  top: 160px;
+  top: 210px;
   left: 13%;
   right: 24%;
 }

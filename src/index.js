@@ -30,6 +30,7 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Home from "./Pages/Home";
 import Football from "./Components/Football";
+import Footer from "./Components/Footer";
 
 export default function App() {
 
@@ -41,7 +42,7 @@ export default function App() {
   }
   
   return (
-    <NewsProvider> {/* ✅ Wrap the entire app */}
+    <NewsProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Mainnews />} />
@@ -68,6 +69,7 @@ export default function App() {
           <Route path="/subscribe" element={<Subscribe/>}/>
           <Route path='/login' element={<Login/>} />
           <Route path='/signup' element={<Signup/>} />
+          <Route path="/footer" element={<Footer/>}/>
           <Route path="/home" element={<PrivateRoute element={<Home/>}/>}/>
         </Routes>
       </BrowserRouter>

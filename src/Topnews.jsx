@@ -35,7 +35,7 @@ function Topnews() {
   }, [language]);
 
   return (
-    <div className="live my-5">
+    <div className="live">
       <button className="live-btn">⚪ Live</button>
       <h1 className="mb-4">Live News</h1>
       {loading && <p className="p2">Loading news...</p>}

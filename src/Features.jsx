@@ -30,7 +30,7 @@ function Features() {
             {features.map((feature, index) => (
               <li key={index} >
                 <button onClick={() => navigate(feature.href)}>
-                <span className="icon">{feature.icon}</span>
+                <span className="icon1">{feature.icon}</span>
                 {feature.name}</button>
               </li>
             ))}
